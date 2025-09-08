@@ -1,0 +1,713 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Address Validation US 4",
+    "description": "Address Validation US 4 combines USPS data with multiple other datasets containing non-USPS data to give the most complete address dataset available to validate US addresses.",
+    "contact": {
+      "name": "Service Objects, Inc.",
+      "url": "https://www.serviceobjects.com/",
+      "email": "support@serviceobjects.com"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "/AV4"
+    }
+  ],
+  "paths": {
+    "/ValidateAddress": {
+      "get": {
+        "tags": [
+          "ValidateAddress"
+        ],
+        "parameters": [
+          {
+            "name": "Mode",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Address1",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Address2",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "City",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "State",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Zip",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BusinessName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "FullName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "FirstName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "MiddleName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "LastName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PhoneNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Options",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "AuthID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAddressResponse"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAddressResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ValidateAddressFindLines": {
+      "get": {
+        "tags": [
+          "ValidateAddressFindLines"
+        ],
+        "parameters": [
+          {
+            "name": "Line1",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Line2",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Line3",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Line4",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Line5",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Line6",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Line7",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Line8",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Line9",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Line10",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "AuthID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAddressResponse"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAddressResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddressInfo": {
+        "required": [
+          "city",
+          "state"
+        ],
+        "type": "object",
+        "properties": {
+          "rating": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "validationType": {
+            "type": "string"
+          },
+          "validationTypeValue": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressExtra": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "zip": {
+            "type": "string",
+            "nullable": true
+          },
+          "countyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "primaryNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "preDirectional": {
+            "type": "string",
+            "nullable": true
+          },
+          "postDirectional": {
+            "type": "string",
+            "nullable": true
+          },
+          "streetName": {
+            "type": "string",
+            "nullable": true
+          },
+          "streetSuffix": {
+            "type": "string",
+            "nullable": true
+          },
+          "secondaryType": {
+            "type": "string",
+            "nullable": true
+          },
+          "secondaryNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "pmbType": {
+            "type": "string",
+            "nullable": true
+          },
+          "pmbNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "barcodeDigits": {
+            "type": "string",
+            "nullable": true
+          },
+          "carrierRoute": {
+            "type": "string",
+            "nullable": true
+          },
+          "congressCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressNotes": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AddressInfoNotes"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "AddressInfoNotes": {
+        "type": "object",
+        "properties": {
+          "addressLinesSwapped": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "dpv": {
+            "type": "string",
+            "nullable": true
+          },
+          "dpvDesc": {
+            "type": "string",
+            "nullable": true
+          },
+          "ambiguityResolvedByAlternateSource": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "corroborations": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "locationNotFoundInUSPSData": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "secondaryAddedBySuiteLink": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "secondaryAddedByAlternateSource": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "secondaryChangedByAlternateSource": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isUniqueZipCode": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isVacantLocation": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isReturningMail": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isMilitaryLocation": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isGeneralDelivery": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isPostOfficeBoxLocation": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isCMRALocation": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isCMRALocationMissingPMB": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isFreightForwarderLocation": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isPrisonLocation": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isHotelLocation": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isResidentialLocation": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "preDirectionalAdded": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "preDirectionalChanged": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "preDirectionalRemoved": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "postDirectionalAdded": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "postDirectionalChanged": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "postDirectionalRemoved": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "suffixAdded": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "suffixChanged": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "streetNameChanged": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "cityAdded": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "cityChanged": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "stateAdded": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "stateChanged": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "zipAdded": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "zipChanged": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "zip4Added": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "zip4Changed": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "streetAliasUsed": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "cityAliasUsed": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParsedInputInfo": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressExtra": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "state": {
+            "type": "string",
+            "nullable": true
+          },
+          "zip": {
+            "type": "string",
+            "nullable": true
+          },
+          "primaryNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "preDirectional": {
+            "type": "string",
+            "nullable": true
+          },
+          "postDirectional": {
+            "type": "string",
+            "nullable": true
+          },
+          "streetName": {
+            "type": "string",
+            "nullable": true
+          },
+          "streetSuffix": {
+            "type": "string",
+            "nullable": true
+          },
+          "secondaryType": {
+            "type": "string",
+            "nullable": true
+          },
+          "secondaryNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "xml": {
+          "name": "problem"
+        }
+      },
+      "ValidateAddressResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AddressInfo"
+            }
+          },
+          "parsedInput": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ParsedInputInfo"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

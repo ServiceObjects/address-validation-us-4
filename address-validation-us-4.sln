@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "address-validation-us-4-dot-net", "address-validation-us-4-dot-net\address-validation-us-4-dot-net.csproj", "{B8179032-A31E-43B0-A6C8-73C2A3F31ED3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "address-validation-us-4-dot-net-examples", "address-validation-us-4-dot-net-examples\address-validation-us-4-dot-net-examples.csproj", "{DBB645C9-EC6D-4A09-BCEE-A391660C9F12}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "address-validation-us-4-python", "address-validation-us-4-python\address-validation-us-4-python.pyproj", "{F42ECF2D-04E9-46A3-B990-65408F75B177}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "address-validation-us-4-python-examples", "address-validation-us-4-python-examples\address-validation-us-4-python-examples.pyproj", "{18679174-AF53-4261-8B5C-43317F6AEE87}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "address-validation-us-4-nodejs", "address-validation-us-4-nodejs\address-validation-us-4-nodejs.esproj", "{8941FC62-61C9-731F-688D-FB472FA86B40}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "address-validation-us-4-nodejs-examples", "address-validation-us-4-nodejs-examples\address-validation-us-4-nodejs-examples.esproj", "{7C068C90-3405-8134-27F9-BE5867329719}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8179032-A31E-43B0-A6C8-73C2A3F31ED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8179032-A31E-43B0-A6C8-73C2A3F31ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8179032-A31E-43B0-A6C8-73C2A3F31ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8179032-A31E-43B0-A6C8-73C2A3F31ED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBB645C9-EC6D-4A09-BCEE-A391660C9F12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB645C9-EC6D-4A09-BCEE-A391660C9F12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBB645C9-EC6D-4A09-BCEE-A391660C9F12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB645C9-EC6D-4A09-BCEE-A391660C9F12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F42ECF2D-04E9-46A3-B990-65408F75B177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F42ECF2D-04E9-46A3-B990-65408F75B177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18679174-AF53-4261-8B5C-43317F6AEE87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18679174-AF53-4261-8B5C-43317F6AEE87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8941FC62-61C9-731F-688D-FB472FA86B40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8941FC62-61C9-731F-688D-FB472FA86B40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8941FC62-61C9-731F-688D-FB472FA86B40}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8941FC62-61C9-731F-688D-FB472FA86B40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8941FC62-61C9-731F-688D-FB472FA86B40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8941FC62-61C9-731F-688D-FB472FA86B40}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7C068C90-3405-8134-27F9-BE5867329719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C068C90-3405-8134-27F9-BE5867329719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C068C90-3405-8134-27F9-BE5867329719}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7C068C90-3405-8134-27F9-BE5867329719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C068C90-3405-8134-27F9-BE5867329719}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C068C90-3405-8134-27F9-BE5867329719}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B525A8E4-0D9C-47E4-84AE-7E580E040BE4}
+	EndGlobalSection
+EndGlobal
