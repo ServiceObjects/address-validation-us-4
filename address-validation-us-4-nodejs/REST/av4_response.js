@@ -89,7 +89,7 @@ export class AV4Response {
         this.Status = data.status || null;
         this.Addresses = (data.addresses  || []).map(addr => new AddressInfo(addr));
         this.ParsedInput = data.parsedInput ? new ParsedInputInfo(data.parsedInput) : null;
-         this.ProblemDetails = data.ProblemDetails
+        this.ProblemDetails = data.ProblemDetails
             ? new ProblemDetails(
                 data.ProblemDetails.Type,
                 data.ProblemDetails.Title,
