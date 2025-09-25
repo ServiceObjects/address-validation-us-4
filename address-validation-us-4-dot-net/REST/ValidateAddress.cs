@@ -127,19 +127,19 @@ namespace address_validation_us_4_dot_net.REST
         public static string BuildUrl(ValidateAddressInput input, string baseUrl)
         {
             string qs = $"ValidateAddress?" +
-                     $"Mode={HttpUtility.UrlEncode(input.Mode)}" +
-                     $"&Address1={HttpUtility.UrlEncode(input.Address1)}" +
-                     $"&Address2={HttpUtility.UrlEncode(input.Address2)}" +
-                     $"&City={HttpUtility.UrlEncode(input.City)}" +
-                     $"&State={HttpUtility.UrlEncode(input.State)}" +
-                     $"&ZIP={HttpUtility.UrlEncode(input.ZIP)}" +
-                     $"&BusinessName={HttpUtility.UrlEncode(input.BusinessName)}" +
-                     $"&FirstName={HttpUtility.UrlEncode(input.FirstName)}" +
-                     $"&MiddleName={HttpUtility.UrlEncode(input.MiddleName)}" +
-                     $"&LastName={HttpUtility.UrlEncode(input.LastName)}" +
-                     $"&PhoneNumber={HttpUtility.UrlEncode(input.PhoneNumber)}" +
-                     $"&Options={HttpUtility.UrlEncode(input.Options)}" +
-                     $"&AuthID={HttpUtility.UrlEncode(input.AuthID)}";
+                     $"Mode={Helper.UrlEncode(input.Mode)}" +
+                     $"&Address1={Helper.UrlEncode(input.Address1)}" +
+                     $"&Address2={Helper.UrlEncode(input.Address2)}" +
+                     $"&City={Helper.UrlEncode(input.City)}" +
+                     $"&State={Helper.UrlEncode(input.State)}" +
+                     $"&ZIP={Helper.UrlEncode(input.ZIP)}" +
+                     $"&BusinessName={Helper.UrlEncode(input.BusinessName)}" +
+                     $"&FirstName={Helper.UrlEncode(input.FirstName)}" +
+                     $"&MiddleName={Helper.UrlEncode(input.MiddleName)}" +
+                     $"&LastName={Helper.UrlEncode(input.LastName)}" +
+                     $"&PhoneNumber={Helper.UrlEncode(input.PhoneNumber)}" +
+                     $"&Options={Helper.UrlEncode(input.Options)}" +
+                     $"&AuthID={Helper.UrlEncode(input.AuthID)}";
             return baseUrl + qs;
         }
 

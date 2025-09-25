@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using System.Web;
 
 namespace address_validation_us_4_dot_net.REST
 {
@@ -22,5 +23,7 @@ namespace address_validation_us_4_dot_net.REST
             string jsonResponse = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
             return jsonResponse;
         }
+
+        public static string UrlEncode(string value) => HttpUtility.UrlEncode(value ?? string.Empty);
     }
 }
