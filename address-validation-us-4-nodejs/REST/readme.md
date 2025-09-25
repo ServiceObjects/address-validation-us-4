@@ -139,10 +139,11 @@ if (!response.ProblemDetails)
 } 
 else
 {
-     console.log("\n* ProblemDetails *\n");
-     console.log(`ProblemDetails Title : ${response.ProblemDetails.Title}`);
-     console.log(`ProblemDetails Status: ${response.ProblemDetails.Status}`);
-     console.log(`ProblemDetails Detail: ${response.ProblemDetails.Detail}`);
+    console.log("\n* ProblemDetails *\n");
+    console.log(`Problem Details Type  : ${response.ProblemDetails.type}`);
+    console.log(`Problem Details Title : ${response.ProblemDetails.title}`);
+    console.log(`Problem Details Status: ${response.ProblemDetails.status}`);
+    console.log(`Problem Details Detail: ${response.ProblemDetails.detail}`);
 }
 ```
 
