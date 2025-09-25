@@ -1,4 +1,5 @@
 import requests
+import json
 from av4_response import AV4Response, AddressInfo, ParsedInputInfo, ProblemDetails
 
 # Endpoint URLs for Address Validation US 4 ValidateAddress REST API
@@ -134,10 +135,11 @@ def validate_address(
                     ProblemDetails=None
                 )
             except Exception as backup_exc:
+                data = json.loads(backup_exc.response.content)
                 problem_details = ProblemDetails(
-                    title="",
-                    status="",
-                    detail=f"Primary: {req_exc} | Backup: {backup_exc}"
+                    Type=data["type"],
+                    Title=data["title"],
+                    Status=data["status"]
                 )
                 return AV4Response(
                     Status=None,
@@ -146,10 +148,11 @@ def validate_address(
                     ProblemDetails=problem_details
                 )
         else:
+            data = json.loads(req_exc.response.content)
             problem_details = ProblemDetails(
-                title="",
-                status="",
-                detail=str(req_exc)
+                Type=data["type"],
+                Title=data["title"],
+                Status=data["status"]
             )
             return AV4Response(
                 Status=None,
