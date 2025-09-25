@@ -7,6 +7,7 @@ export async function validateAddressGO(licenseKey, isLive) {
 
     const Mode = "1";
     const Address1 = "136 W Canon Perdido St, Suite D";
+    //const Address1 = "1";
     const Address2 = "";
     const City = "Santa Barbara";
     const State = "CA";
@@ -120,9 +121,10 @@ export async function validateAddressGO(licenseKey, isLive) {
             }
         } else {
             console.log("\n* ProblemDetails *\n");
-            console.log(`ProblemDetails Title : ${response.ProblemDetails.Title}`);
-            console.log(`ProblemDetails Status: ${response.ProblemDetails.Status}`);
-            console.log(`ProblemDetails Detail: ${response.ProblemDetails.Detail}`);
+            console.log(`Problem Details Type : ${response.ProblemDetails.type}`);
+            console.log(`Problem Details Title : ${response.ProblemDetails.title}`);
+            console.log(`Problem Details Status: ${response.ProblemDetails.status}`);
+            console.log(`Problem Details Detail: ${response.ProblemDetails.detail}`);
         }
     } catch (e) {
         console.error(`\nException occurred: ${e.message}`);

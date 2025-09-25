@@ -7,14 +7,14 @@ import { AV4Response } from './av4_response.js';
  * @type {string}
  * @description The base URL for the live ServiceObjects Address Validation US 4 API service.
  */
-const LiveBaseUrl = 'https://strial.serviceobjects.com/AV4/';
+const LiveBaseUrl = 'https://sws.serviceobjects.com/AV4/';
 
 /**
  * @constant
  * @type {string}
  * @description The base URL for the backup ServiceObjects Address Validation US 4 API service.
  */
-const BackupBaseUrl = 'https://strialbackup.serviceobjects.com/AV4/';
+const BackupBaseUrl = 'https://swsbackup.serviceobjects.com/AV4/';
 
 /**
  * @constant
@@ -70,9 +70,10 @@ export const httpGet = async (url, timeoutSeconds) => {
         }
     } catch (error) {
         result.ProblemDetails = {
-            title: "",
-            Status: 500,
-            detail: error.message
+            type: error.response.data.type,
+            title: error.response.data.title,
+            status: error.response.data.status,
+            detail: error.response.data.detail
         };
         result.Status = null;
         result.Addresses = null;

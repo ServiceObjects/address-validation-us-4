@@ -73,13 +73,14 @@ export class ParsedInputInfo {
 
 export class ProblemDetails {
     constructor({ type = null, title = null, status = null, detail = null } = {}) {
+        this.type = type;
         this.title = title;
         this.status = status;
         this.detail = detail;
     }
 
     toString() {
-        return `Title: ${this.title} Status: ${this.status} Detail: ${this.detail}`;
+        return `Type: ${this.type} Title: ${this.title} Status: ${this.status} Detail: ${this.detail}`;
     }
 }
 
@@ -90,6 +91,7 @@ export class AV4Response {
         this.ParsedInput = data.parsedInput ? new ParsedInputInfo(data.parsedInput) : null;
          this.ProblemDetails = data.ProblemDetails
             ? new ProblemDetails(
+                data.ProblemDetails.Type,
                 data.ProblemDetails.Title,
                 data.ProblemDetails.Status,
                 data.ProblemDetails.Detail
