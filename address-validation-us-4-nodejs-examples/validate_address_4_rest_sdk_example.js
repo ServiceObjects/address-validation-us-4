@@ -1,61 +1,58 @@
 import { ValidateAddressClient } from "../address-validation-us-4-nodejs/REST/validate_address_rest.js";
 
-export async function validateAddressGO(licenseKey, isLive) {
+export async function validateAddressGO(authId, isLive) {
     console.log("\n---------------------------------------------------------");
     console.log("Address Validation US 4 - ValidateAddressInput - REST SDK");
     console.log("---------------------------------------------------------");
 
-    const Mode = "1";
-    const Address1 = "136 W Canon Perdido St, Suite D";
-    //const Address1 = "1";
-    const Address2 = "";
-    const City = "Santa Barbara";
-    const State = "CA";
-    const ZIP = "93101";
-    const BusinessName = "Service Objects";
-    const FirstName = "";
-    const MiddleName = "";
-    const LastName = "";
-    const PhoneNumber = "8059631700";
-    const Options = "";
-    const AuthID = licenseKey;
-    const IsLive = isLive;
-    const TimeoutSeconds = 15;
+    const mode = "1";
+    const address1 = "136 W Canon Perdido St, Suite D";
+    const address2 = "";
+    const city = "Santa Barbara";
+    const state = "CA";
+    const zip = "93101";
+    const businessName = "Service Objects";
+    const firstName = "";
+    const middleName = "";
+    const lastName = "";
+    const phoneNumber = "8059631700";
+    const options = "";
+    const timeoutSeconds = 15;
+    const authId = authId;
+    const isLive = true;
 
     console.log("\n* Input *\n");
-    console.log(`Mode        : ${Mode}`);
-    console.log(`Address1    : ${Address1}`);
-    console.log(`Address2    : ${Address2}`);
-    console.log(`City        : ${City}`);
-    console.log(`State       : ${State}`);
-    console.log(`ZIP         : ${ZIP}`);
-    console.log(`BusinessName: ${BusinessName}`);
-    console.log(`FirstName   : ${FirstName}`);
-    console.log(`MiddleName  : ${MiddleName}`);
-    console.log(`LastName    : ${LastName}`);
-    console.log(`PhoneNumber : ${PhoneNumber}`);
-    console.log(`Options     : ${Options}`);
-    console.log(`AuthID      : ${AuthID}`);
-    console.log(`IsLive      : ${IsLive}`);
+    console.log(`Mode        : ${mode}`);
+    console.log(`Address1    : ${address1}`);
+    console.log(`Address2    : ${address2}`);
+    console.log(`City        : ${city}`);
+    console.log(`State       : ${state}`);
+    console.log(`ZIP         : ${zip}`);
+    console.log(`BusinessName: ${businessName}`);
+    console.log(`FirstName   : ${firstName}`);
+    console.log(`MiddleName  : ${middleName}`);
+    console.log(`LastName    : ${lastName}`);
+    console.log(`PhoneNumber : ${phoneNumber}`);
+    console.log(`Options     : ${options}`);
+    console.log(`AuthID      : ${authId}`);
+    console.log(`IsLive      : ${isLive}`);
 
     try {
-        const response = await ValidateAddressClient.invoke(
-            Mode,
-            Address1,
-            Address2,
-            City,
-            State,
-            ZIP,
-            BusinessName,
-            FirstName,
-            MiddleName,
-            LastName,
-            PhoneNumber,
-            Options,
-            AuthID,
-            IsLive,
-            TimeoutSeconds
-        );
+        const response = await ValidateAddressClient.invoke(mode,
+                                                            address1,
+                                                            address2,
+                                                            city,
+                                                            state,
+                                                            zip,
+                                                            businessName,
+                                                            firstName,
+                                                            middleName,
+                                                            lastName,
+                                                            phoneNumber,
+                                                            options,
+                                                            authId,
+                                                            isLive,
+                                                            timeoutSeconds);
 
         if (!response.ProblemDetails) {
             if (response.Addresses) {

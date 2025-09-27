@@ -22,46 +22,45 @@ This operation can be used in three modes. Mode 1, is for doing the standard val
 ```
 # 1. Build the input
 #
-#  Required fields:
-#               Mode
-#               City
-#               Address1
-#               State
-#               ZIP 
-#               AuthID
-#               IsLive
-# 
-# Optional:
-#       Address2
-#       BusinessName
-#       FullName
-#       FirstName
-#       MiddleName
-#       LastName
-#       PhoneNumber
-#       Options
-#       TimeoutSeconds (default: 15)
+#  Fields:
+#       mode
+#       city
+#       address1
+#       address2
+#       state
+#       zip 
+#       business_name
+#       full_name
+#       first_name
+#       middle_name
+#       last_name
+#       phone_number
+#       options
+#       timeout_seconds
+#       auth_id
+#       is_live
 
-Mode = "1"
-Address1 = "136 W Canon Perdido St, Suite D"
-Address2 = ""
-City = "Santa Barbara"
-State = "CA"
-ZIP = "93101"
-BusinessName = "Service Objects"
-FirstName = ""
-MiddleName = ""
-LastName = ""
-PhoneNumber = "8059631700"
-Options = ""
-AuthID = license_key
-IsLive = is_live
-TimeoutSeconds = 15
+
+mode = "1"
+address1 = "136 W Canon Perdido St, Suite D"
+address2 = ""
+city = "Santa Barbara"
+state = "CA"
+zip = "93101"
+business_name = "Service Objects"
+first_name = ""
+middle_name = ""
+last_name = ""
+phone_number = "8059631700"
+options = ""
+auth_id = "YOUR AUTH ID"
+is_live = True
+timeout_seconds = 15
 
 from validate_address_rest import validate_address
 
 # 2. Call the method.
-response = validate_address(Mode, Address1, Address2, City, State, ZIP, BusinessName,FirstName, MiddleName, LastName, PhoneNumber, Options,AuthID, IsLive, TimeoutSeconds)
+response = validate_address(mode, address1, address2, city, state, zip, business_name, first_name, middle_name, last_name, phone_number, options, auth_id, is_live, timeout_seconds)
 
 # 3. Inspect results.
 if response.ProblemDetails is None:

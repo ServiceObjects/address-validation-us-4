@@ -8,4 +8,4 @@ if __name__ == "__main__":
   is_live = False
 
   # Address Validation US 4 - ValidateAddressInput - REST SDK
-  validate_address_sdk_go(is_live,license_key)
+  validate_address_sdk_go(is_live, license_key)

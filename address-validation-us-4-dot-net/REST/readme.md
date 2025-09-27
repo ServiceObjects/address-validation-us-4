@@ -22,17 +22,13 @@ This operation can be used in three modes. Mode 1, is for doing the standard val
 ```
 // 1. Build the input
 //
-// Required fields:
-//               Mode
-//               City
-//               State
-//               Address1
-//               ZIP 
-//               AuthID
-//               IsLive
-// 
-// Optional:
+// Fields:
+//       Mode
+//       Address1
 //       Address2
+//       City
+//       State
+//       ZIP 
 //       BusinessName
 //       FullName
 //       FirstName
@@ -40,7 +36,11 @@ This operation can be used in three modes. Mode 1, is for doing the standard val
 //       LastName
 //       PhoneNumber
 //       Options
-//       TimeoutSeconds (default: 15)
+//       AuthID
+//       IsLive
+// 
+// Optional:
+//       TimeoutSeconds
 
 using address_validation_us_4_dot_net.REST;
 

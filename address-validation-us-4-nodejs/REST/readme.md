@@ -22,46 +22,46 @@ This operation can be used in three modes. Mode 1, is for doing the standard val
 ```
 // 1. Build the input
 //
-//  Required fields:
-//               Mode
-//               City
-//               Address1
-//               State
-//               ZIP 
-//               AuthID
-//               IsLive
+//  Fields:
+//       mode
+//       address1
+//       address2
+//       city
+//       state
+//       zip 
+//       businessName
+//       fullName
+//       firstName
+//       middleName
+//       lastName
+//       phoneNumber
+//       options
+//       authId
+//       isLive
 // 
 // Optional:
-//       Address2
-//       BusinessName
-//       FullName
-//       FirstName
-//       MiddleName
-//       LastName
-//       PhoneNumber
-//       Options
-//       TimeoutSeconds (default: 15)
+//       timeoutSeconds
 
  import { ValidateAddressClient } from "../address-validation-us-4-nodejs/src/REST/validate_address_rest.js";
 
-const Mode = "1";
-const Address1 = "136 W Canon Perdido St, Suite D";
-const Address2 = "";
-const City = "Santa Barbara";
-const State = "CA";
-const ZIP = "93101";
-const BusinessName = "Service Objects";
-const FirstName = "";
-const MiddleName = "";
-const LastName = "";
-const PhoneNumber = "8059631700";
-const Options = "";
-const AuthID = licenseKey;
-const IsLive = isLive;
-const TimeoutSeconds = 15;
+const mode = "1";
+const address1 = "136 W Canon Perdido St, Suite D";
+const address2 = "";
+const city = "Santa Barbara";
+const state = "CA";
+const zip = "93101";
+const businessName = "Service Objects";
+const firstName = "";
+const middleName = "";
+const lastName = "";
+const phoneNumber = "8059631700";
+const options = "";
+const timeoutSeconds = 15;
+const authId = "YOUR AUTH ID";
+const isLive = true;
 
 // 2. Call the sync Invoke() method.
- const response = await ValidateAddressClient.invoke(Mode,Address1,Address2,City,State,ZIP,BusinessName,FirstName,MiddleName,LastName,PhoneNumber,Options,AuthID,IsLive,TimeoutSeconds);
+ const response = await ValidateAddressClient.invoke(mode, address1, address2, city, state, zip, businessName, firstName, middleName, lastName, phoneNumber, options, authId, isLive, timeoutSeconds);
 
 // 3. Inspect results.
 

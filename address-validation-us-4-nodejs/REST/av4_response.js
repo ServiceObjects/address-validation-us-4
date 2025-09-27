@@ -1,25 +1,25 @@
 export class AddressInfo {
     constructor(data = {}) {
-        this.rating = data.rating || null;
-        this.validationType = data.validationType || null;
-        this.address = data.address || null;
-        this.addressExtra = data.addressExtra || null;
-        this.city = data.city || null;
-        this.state = data.state || null;
-        this.zip = data.zip || null;
-        this.countyName = data.countyName || null;
-        this.primaryNumber = data.primaryNumber || null;
-        this.preDirectional = data.preDirectional || null;
-        this.postDirectional = data.postDirectional || null;
-        this.streetName = data.streetName || null;
-        this.streetSuffix = data.streetSuffix || null;
-        this.secondaryType = data.secondaryType || null;
-        this.secondaryNumber = data.secondaryNumber || null;
-        this.pmbType = data.pmbType || null;
-        this.pmbNumber = data.pmbNumber || null;
-        this.barcodeDigits = data.barcodeDigits || null;
-        this.carrierRoute = data.carrierRoute || null;
-        this.congressCode = data.congressCode || null;
+        this.rating = data.rating;
+        this.validationType = data.validationType;
+        this.address = data.address;
+        this.addressExtra = data.addressExtra;
+        this.city = data.city;
+        this.state = data.state;
+        this.zip = data.zip;
+        this.countyName = data.countyName;
+        this.primaryNumber = data.primaryNumber;
+        this.preDirectional = data.preDirectional;
+        this.postDirectional = data.postDirectional;
+        this.streetName = data.streetName;
+        this.streetSuffix = data.streetSuffix;
+        this.secondaryType = data.secondaryType;
+        this.secondaryNumber = data.secondaryNumber;
+        this.pmbType = data.pmbType;
+        this.pmbNumber = data.pmbNumber;
+        this.barcodeDigits = data.barcodeDigits;
+        this.carrierRoute = data.carrierRoute;
+        this.congressCode = data.congressCode;
         this.addressNotes = data.addressNotes || [];
     }
 
@@ -42,22 +42,22 @@ export class AddressInfo {
 
 export class ParsedInputInfo {
     constructor(data = {}) {
-        this.address = data.address || null;
-        this.addressExtra = data.addressExtra || null;
-        this.city = data.city || null;
-        this.state = data.state || null;
-        this.zip = data.zip || null;
-        this.primaryNumber = data.primaryNumber || null;
-        this.preDirectional = data.preDirectional || null;
-        this.postDirectional = data.postDirectional || null;
-        this.streetName = data.streetName || null;
-        this.streetSuffix = data.streetSuffix || null;
-        this.secondaryType = data.secondaryType || null;
-        this.secondaryNumber = data.secondaryNumber || null;
-        this.phoneNumber = data.phoneNumber || null;
-        this.firstName = data.firstName || null;
-        this.middleName = data.middleName || null;
-        this.lastName = data.lastName || null;
+        this.address = data.address;
+        this.addressExtra = data.addressExtra;
+        this.city = data.city;
+        this.state = data.state;
+        this.zip = data.zip;
+        this.primaryNumber = data.primaryNumber;
+        this.preDirectional = data.preDirectional;
+        this.postDirectional = data.postDirectional;
+        this.streetName = data.streetName;
+        this.streetSuffix = data.streetSuffix;
+        this.secondaryType = data.secondaryType;
+        this.secondaryNumber = data.secondaryNumber;
+        this.phoneNumber = data.phoneNumber;
+        this.firstName = data.firstName;
+        this.middleName = data.middleName;
+        this.lastName = data.lastName;
     }
 
     toString() {
@@ -86,7 +86,7 @@ export class ProblemDetails {
 
 export class AV4Response {
     constructor(data = {}) {
-        this.Status = data.status || null;
+        this.Status = data.status;
         this.Addresses = (data.addresses  || []).map(addr => new AddressInfo(addr));
         this.ParsedInput = data.parsedInput ? new ParsedInputInfo(data.parsedInput) : null;
         this.ProblemDetails = data.ProblemDetails

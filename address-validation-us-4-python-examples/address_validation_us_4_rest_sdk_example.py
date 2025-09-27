@@ -11,45 +11,42 @@ def validate_address_sdk_go(is_live: bool, license_key: str) -> None:
     print("Address Validation US 4 - ValidateAddressInput - REST SDK")
     print("---------------------------------------------------------")
 
-    Mode = "1"
-    Address1 = "136 W Canon Perdido St, Suite D"
-    Address2 = ""
-    City = "Santa Barbara"
-    State = "CA"
-    ZIP = "93101"
-    BusinessName = "Service Objects"
-    FirstName = ""
-    MiddleName = ""
-    LastName = ""
-    PhoneNumber = "8059631700"
-    Options = ""
-    AuthID = license_key
-    IsLive = is_live
-    TimeoutSeconds = 15
+    mode = "1"
+    address1 = "136 W Canon Perdido St, Suite D"
+    address2 = ""
+    city = "Santa Barbara"
+    state = "CA"
+    zip = "93101"
+    business_name = "Service Objects"
+    first_name = ""
+    middle_name = ""
+    last_name = ""
+    phone_number = "8059631700"
+    options = ""
+    auth_id = "YOUR AUTH ID"
+    is_live = True
+    timeout_seconds = 15
+
 
     print("\n* Input *\n")
-    print(f"Mode        : {Mode}")
-    print(f"Address1    : {Address1}")
-    print(f"Address2    : {Address2}")
-    print(f"City        : {City}")
-    print(f"State       : {State}")
-    print(f"ZIP         : {ZIP}")
-    print(f"BusinessName: {BusinessName}")
-    print(f"FirstName   : {FirstName}")
-    print(f"MiddleName  : {MiddleName}")
-    print(f"LastName    : {LastName}")
-    print(f"PhoneNumber : {PhoneNumber}")
-    print(f"Options     : {Options}")
-    print(f"AuthID      : {AuthID}")
-    print(f"IsLive      : {IsLive}")
-    print(f"TimeoutSeconds : {TimeoutSeconds}")
+    print(f"Mode        : {mode}")
+    print(f"Address1    : {address1}")
+    print(f"Address2    : {address2}")
+    print(f"City        : {city}")
+    print(f"State       : {state}")
+    print(f"ZIP         : {zip}")
+    print(f"BusinessName: {business_name}")
+    print(f"FirstName   : {first_name}")
+    print(f"MiddleName  : {middle_name}")
+    print(f"LastName    : {last_name}")
+    print(f"PhoneNumber : {phone_number}")
+    print(f"Options     : {options}")
+    print(f"AuthID      : {auth_id}")
+    print(f"IsLive      : {is_live}")
+    print(f"TimeoutSeconds : {timeout_seconds}")
 
     try:
-        response = validate_address(
-            Mode, Address1, Address2, City, State, ZIP, BusinessName,
-            FirstName, MiddleName, LastName, PhoneNumber, Options,
-            AuthID, IsLive, TimeoutSeconds
-        )
+        response = validate_address(mode, address1, address2, city, state, zip, business_name, first_name, middle_name, last_name, phone_number, options, auth_id, is_live, timeout_seconds)
 
         if response.ProblemDetails is None:
             print("\n* Address Info *\n")
